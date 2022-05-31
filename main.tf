@@ -7,7 +7,7 @@ data "aws_subnets" "private" {
 
 # Create DynamoDB
 resource "aws_dynamodb_table" "users_table" {
-  name             = "Users2"
+  name             = "Users3"
   billing_mode     = "PAY_PER_REQUEST"
   hash_key         = "UserId"
   range_key        = "Name"
