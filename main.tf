@@ -67,6 +67,12 @@ resource "aws_iam_role" "dax" {
         "Service": "dax.amazonaws.com"
       },
       "Action": "sts:AssumeRole"
+    },{
+      "Effect": "Deny",
+      "Principal": {
+        "Service": "dax.amazonaws.com"
+      },
+      "Action": "sts:AssumeRole"
     }
   ]
 }
