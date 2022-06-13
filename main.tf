@@ -7,7 +7,7 @@ data "aws_subnets" "private" {
 
 # Create DynamoDB
 resource "aws_dynamodb_table" "users_table" {
-  name             = "Users2"
+  name             = "Users3"
   billing_mode     = "PAY_PER_REQUEST"
   hash_key         = "UserId"
   range_key        = "Name"
@@ -63,6 +63,12 @@ resource "aws_iam_role" "dax" {
   "Statement": [
     {
       "Effect": "Allow",
+      "Principal": {
+        "Service": "dax.amazonaws.com"
+      },
+      "Action": "sts:AssumeRole"
+    },{
+      "Effect": "Deny",
       "Principal": {
         "Service": "dax.amazonaws.com"
       },
